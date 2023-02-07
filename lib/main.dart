@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
         title: "Facebook Clone",
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          colorSchemeSeed: Colors.blue,
+          // colorSchemeSeed: Colors.blue,
         ),
         home: MainWidget());
   }

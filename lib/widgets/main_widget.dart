@@ -1,5 +1,7 @@
+import '../pages/home.dart';
 import 'package:flutter/material.dart';
 import 'action_buttons.dart';
+import "package:badges/badges.dart" as badges;
 
 class MainWidget extends StatefulWidget {
   @override
@@ -7,12 +9,14 @@ class MainWidget extends StatefulWidget {
 }
 
 class MainWidgetState extends State<MainWidget> {
+  final _scaffolKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 5,
-      
-      child: Scaffold(
+        length: 5,
+        child: Scaffold(
+          key: _scaffolKey,
           appBar: AppBar(
               title: const Text(
                 "facebook",
@@ -22,33 +26,61 @@ class MainWidgetState extends State<MainWidget> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              actions: [ActionButtons()],
+              actions: [ActionButtons(_scaffolKey)],
               backgroundColor: Colors.white,
-              bottom: const TabBar(
-
+              bottom: TabBar(
                 indicatorColor: Colors.blue,
-                labelPadding: EdgeInsets.symmetric(vertical: 4),
+                labelPadding: const EdgeInsets.symmetric(vertical: 4),
                 indicatorWeight: 3,
-
                 tabs: [
-                  Icon(Icons.home, color: Color.fromARGB(255, 0, 0, 0), size: 35,),
-                  Icon(Icons.smart_display, color: Colors.black, size: 35,),
-                  Icon(Icons.store, color: Colors.black, size: 35,),
-                  Icon(Icons.account_circle, color: Colors.black, size: 35,),
-                  Icon(Icons.notifications, color: Colors.black, size: 35,),
+                  const Icon(
+                    Icons.home,
+                    color: Color.fromARGB(206, 0, 0, 0),
+                    size: 30,
+                  ),
+                  const Icon(
+                    Icons.smart_display,
+                    color: Color.fromARGB(206, 0, 0, 0),
+                    size: 30,
+                  ),
+                  const Icon(
+                    Icons.store,
+                    color: Color.fromARGB(206, 0, 0, 0),
+                    size: 30,
+                  ),
+                  const Icon(
+                    Icons.account_circle,
+                    color: Color.fromARGB(206, 0, 0, 0),
+                    size: 30,
+                  ),
+                  badges.Badge(
+                      position: badges.BadgePosition.topEnd(top: -9, end: -10),
+                      badgeContent: const Text(
+                        '3',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      badgeStyle: const badges.BadgeStyle(
+                        badgeColor: Color.fromARGB(239, 255, 0, 0),
+                      ),
+                      child: const Icon(
+                        Icons.notifications,
+                        color: Color.fromARGB(206, 0, 0, 0),
+                        size: 30,
+                      )),
                 ],
-               
               )),
+          endDrawer: Container(
+            child: Drawer(),
+          ),
           body: TabBarView(
             children: [
-              Text("Home"),
+              HomePage(),
               Text("Video"),
               Text("Shop"),
               Text("Profile"),
               Text("Notfications"),
             ],
           ),
-    )
-    );
+        ));
   }
 }
