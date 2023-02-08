@@ -13,6 +13,7 @@ class PostBar extends StatelessWidget {
         bottom: 8,
       ),
       child: Row(
+       mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Container(
             child: const CircleAvatar(

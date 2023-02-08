@@ -1,4 +1,5 @@
 import '../pages/home.dart';
+import '../pages/notifications.dart';
 import 'package:flutter/material.dart';
 import 'action_buttons.dart';
 import "package:badges/badges.dart" as badges;
@@ -76,9 +77,9 @@ class MainWidgetState extends State<MainWidget> {
             children: [
               HomePage(),
               Text("Video"),
-              Text("Shop"),
+              Text("Store"),
               Text("Profile"),
-              Text("Notfications"),
+              Notifications(),
             ],
           ),
         ));
