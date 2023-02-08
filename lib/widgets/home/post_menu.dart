@@ -23,9 +23,19 @@ class PostMenuState extends State<PostMenu> {
                 ),
                 Text(
                   "Text",
-                  style: TextStyle(fontSize: 18, color: Colors.black),
+                  style: TextStyle(
+                   fontSize: 18, 
+                   color: Color.fromARGB(135, 0, 0, 0),
+                   ),
                 ),
               ],
+            ),
+          ),
+          Container(
+            height: 30,
+            child: const VerticalDivider(
+              thickness: 1,
+              color: Colors.black12,
             ),
           ),
           TextButton(
@@ -39,7 +49,8 @@ class PostMenuState extends State<PostMenu> {
                 ),
                 Text(
                   "Live Video",
-                  style: TextStyle(fontSize: 18, color: Colors.black),
+                  style: TextStyle(fontSize: 18, color: Color.fromARGB(135, 0, 0, 0),
+                  ),
                 ),
               ],
             ),
@@ -64,7 +75,7 @@ class PostMenuState extends State<PostMenu> {
                   "Location",
                   style: TextStyle(
                     fontSize: 18,
-                    color: Colors.black,
+                    color: Color.fromARGB(135, 0, 0, 0),
                     fontWeight: FontWeight.w500,
                   ),
                 ),
