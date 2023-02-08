@@ -1,8 +1,8 @@
 import "package:flutter/material.dart";
 
 class Stories_Model {
-  var img;
-  var name;
+  final img;
+  final name;
 
   Stories_Model({this.img, this.name});
 }

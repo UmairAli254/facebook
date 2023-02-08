@@ -22,13 +22,13 @@ class StoriesState extends State<Stories> {
               height: 250,
               width: 150,
               decoration: BoxDecoration(
-                // color: Colors.transparent,Umair Ali
+                color: Color.fromARGB(8, 129, 126, 126),
                 border: Border.all(color: Colors.black12),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: GestureDetector(
                 onTap: () {
-                  print("Hello to me");
+                  print("Upload Story");
                 },
                 child: Column(
                   children: [
@@ -46,8 +46,8 @@ class StoriesState extends State<Stories> {
                               child: Image(
                                 image: AssetImage("images/me.jpg"),
                                 width: 250,
-                                height: 150,
-                                fit: BoxFit.fill,
+                                height: 160,
+                                fit: BoxFit.cover,
                               )),
                           Positioned(
                             // top: 60,
@@ -64,7 +64,7 @@ class StoriesState extends State<Stories> {
                     ),
                     Container(
                       // color: Colors.red,
-                      margin: const EdgeInsets.only(top: 55),
+                      margin: const EdgeInsets.only(top: 50),
                       child: const Text(
                         "Create Story",
                         style: TextStyle(
@@ -78,51 +78,52 @@ class StoriesState extends State<Stories> {
 
             // View Stories
             for (var i = 0; i < stories_data.length; i++) ...[
-             Container(
-              height: 250,
-              width: 150,
-              decoration: BoxDecoration(
-                // color: Colors.transparent,Umair Ali
-                border: Border.all(color: Colors.black12),
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: GestureDetector(
-                onTap: () {
-                  print("Hello to me");
-                },
-                child: Stack(
-                  children: [
-                    ClipRRect(
-                      borderRadius: const BorderRadius.all(Radius.circular(20)),
-                      child: Image(
-                        image: AssetImage(stories_data[i].img),
-                        height: 250,
-                        width: 150,
-                        fit: BoxFit.cover,
+              Container(
+                height: 250,
+                width: 150,
+                decoration: BoxDecoration(
+                  // color: Colors.transparent,Umair Ali
+                  border: Border.all(color: Colors.black12),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: GestureDetector(
+                  onTap: () {
+                    print("View this story");
+                  },
+                  child: Stack(
+                    children: [
+                      ClipRRect(
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(20)),
+                        child: Image(
+                          image: AssetImage(stories_data[i].img),
+                          height: 250,
+                          width: 150,
+                          fit: BoxFit.cover,
+                        ),
                       ),
-                    ),
-                    Positioned(
-                        bottom: 7,
-                        left: 7,
-                        child: Text(
-                          stories_data[i].name,
-                          style: const TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                            shadows: [
-                              Shadow(
-                                color: Colors.grey,
-                                offset: Offset(2, 2),
-                                blurRadius: 3,
-                              ),
-                            ],
-                          ),
-                        ))
-                  ],
+                      Positioned(
+                          bottom: 7,
+                          left: 7,
+                          child: Text(
+                            stories_data[i].name,
+                            style: const TextStyle(
+                              fontSize: 20,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                              shadows: [
+                                Shadow(
+                                  color: Colors.grey,
+                                  offset: Offset(2, 2),
+                                  blurRadius: 3,
+                                ),
+                              ],
+                            ),
+                          ))
+                    ],
+                  ),
                 ),
               ),
-            ),
             ]
           ],
         ),

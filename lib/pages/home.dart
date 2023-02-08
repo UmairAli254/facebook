@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../widgets/home/post_bar.dart';
 import '../widgets/home/post_menu.dart';
+import '../widgets/home/posts.dart';
 import '../widgets/home/stories.dart';
 
 class HomePage extends StatefulWidget {
@@ -21,9 +22,11 @@ class HomePageState extends State<HomePage> {
           const Divider(thickness: 5, color: Colors.black12),
 
           Stories(),
-          const Divider(thickness: 5, color: Colors.black12,
+           const Divider(thickness: 5, color: Colors.black12),
 
-          ),
+          Posts(),
+           // const Divider(thickness: 5, color: Colors.black12),
+
         ],
       ),
     );
