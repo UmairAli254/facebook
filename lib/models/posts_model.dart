@@ -27,7 +27,7 @@ var posts_data = [
     profile_pic: "images/me.jpg",
     name: "Umair Ali",
     date: "05-13-20",
-    data: "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum.",
+    data: "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
     post_image: "images/me.jpg",
     likes: "20",
     comments: "30",
@@ -36,7 +36,7 @@ var posts_data = [
   Posts_Model(
     profile_pic: "images/motu.jpg",
     name: "Motu",
-    date: "11-07-22",
+    date: "05-13-20",
     data: "Motu Patlu Motu Patlu Motu Patlu Motu Patlu Motu Patlu Motu Patlu Motu Patlu Motu Patlu Motu Patlu ",
     post_image: "images/motu-patlu.jpg",
     likes: "17",

@@ -36,6 +36,8 @@ class NotificationsState extends State<Notifications> {
                       Icons.check_circle,
                       size: 29,
                     ),
+                    tooltip: "Mark all notifications as read"
+                    
                   ),
                 )
               ],
@@ -52,7 +54,7 @@ class NotificationsState extends State<Notifications> {
           for (var i = 0; i < notifications_data.length; i++) ...[
             ListTile(
               leading: CircleAvatar(
-                backgroundImage: AssetImage(notifications_data[i].pic),
+                backgroundImage: AssetImage(notifications_data[i].pic ?? "images/me.jpg"),
                 radius: 28,
               ),
               title: Wrap(

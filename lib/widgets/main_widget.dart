@@ -1,6 +1,8 @@
 import '../pages/home.dart';
 import '../pages/notifications.dart';
 import 'package:flutter/material.dart';
+import '../pages/shop.dart';
+import '../pages/videos.dart';
 import 'action_buttons.dart';
 import "package:badges/badges.dart" as badges;
 
@@ -76,8 +78,8 @@ class MainWidgetState extends State<MainWidget> {
           body: TabBarView(
             children: [
               HomePage(),
-              Text("Video"),
-              Text("Store"),
+              Videos(),
+              Shop(),
               Text("Profile"),
               Notifications(),
             ],
