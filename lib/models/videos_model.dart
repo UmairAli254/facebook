@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:youtube_player_flutter/youtube_player_flutter.dart";
 
 class Videos_Model {
   final profile_pic;
@@ -28,7 +29,7 @@ var videos_data = [
     name: "Shozuka",
     date: "10 mins",
     data: "Lorem ipsum Lorem.",
-    vid_url: "images/shozuka.jpg",
+    vid_url: YoutubePlayer.convertUrlToId("https://www.youtube.com/watch?v=2P2BpcsQOqE"),
     likes: "20",
     comments: "30",
     shares: "9",
@@ -38,7 +39,7 @@ var videos_data = [
     name: "Umair Ali",
     date: "5 seconds",
     data: "Lorem ipsum Lorem ipsum.",
-    vid_url: "images/me.jpg",
+    vid_url: YoutubePlayer.convertUrlToId("https://www.youtube.com/watch?v=Jn0I6FmKGq4"),
     likes: "20",
     comments: "30",
     shares: "9",

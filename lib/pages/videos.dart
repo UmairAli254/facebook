@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 import "../models/videos_model.dart";
-// import "package:youtube_player_iframe/youtube_player_iframe.dart";
+import "package:youtube_player_flutter/youtube_player_flutter.dart";
 
 class Videos extends StatefulWidget {
   @override
@@ -9,11 +9,6 @@ class Videos extends StatefulWidget {
 
 class VideosState extends State<Videos> {
   var isSwitch = false;
-
-
-
-// If the requirement is just to play a single video.
-
 
   @override
   Widget build(BuildContext context) {
@@ -70,7 +65,7 @@ class VideosState extends State<Videos> {
                       ),
                       TextButton(
                         onPressed: () {
-                         print("Follow");
+                          print("Follow");
                         },
                         child: Text(
                           "  Follow",
@@ -80,10 +75,9 @@ class VideosState extends State<Videos> {
                           ),
                         ),
                         style: TextButton.styleFrom(
-                         padding: EdgeInsets.zero,
-                         minimumSize: Size.zero,
-                         tapTargetSize: MaterialTapTargetSize.shrinkWrap
-                        ),
+                            padding: EdgeInsets.zero,
+                            minimumSize: Size.zero,
+                            tapTargetSize: MaterialTapTargetSize.shrinkWrap),
                       ),
                     ],
                   ),
@@ -122,17 +116,29 @@ class VideosState extends State<Videos> {
                     style: TextStyle(fontSize: 18),
                   )),
 
-              // Image
+              // Video
               Container(
                 decoration:
                     BoxDecoration(borderRadius: BorderRadius.circular(50)),
                 padding: const EdgeInsets.symmetric(horizontal: 5),
-                child: Image(
-                  image: AssetImage(videos_data[i].vid_url),
-                  // image: AssetImage("images/shozuka.jpg"),
-                  // width: 500,
-                  height: 300,
-                  fit: BoxFit.fill,
+                child: YoutubePlayerBuilder(
+                  player: YoutubePlayer(
+                    controller: YoutubePlayerController(
+                      initialVideoId: videos_data[i].vid_url,
+                      flags: const YoutubePlayerFlags(
+                        autoPlay: false,
+                        mute: false,
+                      ),
+                    ),
+                    showVideoProgressIndicator: true,
+                  ),
+                  builder: (context, player) {
+                    return Column(
+                      children: [
+                        player,
+                      ],
+                    );
+                  },
                 ),
               ),
 
