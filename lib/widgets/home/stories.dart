@@ -22,7 +22,7 @@ class StoriesState extends State<Stories> {
               height: 250,
               width: 150,
               decoration: BoxDecoration(
-                color: Color.fromARGB(8, 129, 126, 126),
+                color: const Color.fromARGB(8, 129, 126, 126),
                 border: Border.all(color: Colors.black12),
                 borderRadius: BorderRadius.circular(20),
               ),

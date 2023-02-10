@@ -1,3 +1,4 @@
+import 'package:facebook/pages/profile.dart';
 import 'package:facebook/pages/shop.dart';
 import 'package:facebook/pages/videos.dart';
 import 'package:flutter/material.dart';
@@ -62,7 +63,21 @@ class _MyDrawerState extends State<MyDrawer> {
               padding: EdgeInsets.symmetric(vertical: 10),
               children: [
                 GestureDetector(
-                  onTap: () => print("View Profile"),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return Container(
+                           margin: const EdgeInsets.only(top: 0),
+                            child: Material(
+                              child: Profile(),
+                            ),
+                          );
+                        },
+                      ),
+                    );
+                  },
                   child: ListTile(
                       leading: Container(
                         child: const CircleAvatar(

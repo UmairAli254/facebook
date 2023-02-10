@@ -2,6 +2,7 @@ import '../pages/my_drawer.dart';
 import '../pages/home.dart';
 import '../pages/notifications.dart';
 import 'package:flutter/material.dart';
+import '../pages/profile.dart';
 import '../pages/shop.dart';
 import '../pages/videos.dart';
 import 'action_buttons.dart';
@@ -75,7 +76,7 @@ class MainWidgetState extends State<MainWidget> {
               )),
           // Drawer
           endDrawer: Container(
-           width: MediaQuery.of(context).size.width * 1.0,
+            width: MediaQuery.of(context).size.width * 1.0,
             child: MyDrawer(),
           ),
 
@@ -85,7 +86,7 @@ class MainWidgetState extends State<MainWidget> {
               HomePage(),
               Videos(),
               Shop(),
-              Text("Profile"),
+              Profile(),
               Notifications(),
             ],
           ),
