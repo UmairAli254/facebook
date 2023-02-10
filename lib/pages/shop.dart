@@ -54,43 +54,48 @@ class ShopState extends State<Shop> {
               spacing: 20,
               children: [
                 for (var i = 0; i < shop_data.length; i++) ...[
-                  Container(
-                    height: 250,
-                    width: 180,
-                    margin: const EdgeInsets.only(bottom: 20),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color: const Color.fromARGB(221, 227, 222, 222),
-                    ),
-                    child: Column(
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(3),
-                          child: Image(
-                            image: AssetImage(shop_data[i].pic),
-                            height: 150,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        Container(
-                          padding: const EdgeInsets.all(8.0),
-                          alignment: const Alignment(-1, -1),
-                          child: Text(
-                            shop_data[i].title,
-                            style: const TextStyle(
-                              fontSize: 20,
+                  GestureDetector(
+                    onTap: () {
+                      print("View Product!");
+                    },
+                    child: Container(
+                      height: 250,
+                      width: 180,
+                      margin: const EdgeInsets.only(bottom: 20),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: const Color.fromARGB(221, 227, 222, 222),
+                      ),
+                      child: Column(
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(3),
+                            child: Image(
+                              image: AssetImage(shop_data[i].pic),
+                              height: 150,
+                              fit: BoxFit.cover,
                             ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(13),
-                          child: Text(
-                            "\$${shop_data[i].price}",
-                            style: const TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold),
+                          Container(
+                            padding: const EdgeInsets.all(8.0),
+                            alignment: const Alignment(-1, -1),
+                            child: Text(
+                              shop_data[i].title,
+                              style: const TextStyle(
+                                fontSize: 20,
+                              ),
+                            ),
                           ),
-                        )
-                      ],
+                          Padding(
+                            padding: const EdgeInsets.all(13),
+                            child: Text(
+                              "\$${shop_data[i].price}",
+                              style: const TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ],

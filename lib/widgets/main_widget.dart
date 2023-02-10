@@ -1,3 +1,4 @@
+import '../pages/my_drawer.dart';
 import '../pages/home.dart';
 import '../pages/notifications.dart';
 import 'package:flutter/material.dart';
@@ -72,9 +73,13 @@ class MainWidgetState extends State<MainWidget> {
                       )),
                 ],
               )),
+          // Drawer
           endDrawer: Container(
-            child: Drawer(),
+           width: MediaQuery.of(context).size.width * 1.0,
+            child: MyDrawer(),
           ),
+
+// Body
           body: TabBarView(
             children: [
               HomePage(),
